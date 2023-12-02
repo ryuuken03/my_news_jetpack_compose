@@ -43,7 +43,8 @@ class ArticlesViewModel @Inject constructor(
                         _state.value = state.value.copy(
                             articlesList = list,
 //                            isLoading = if (page == 1) true else false
-                            isLoading = true
+                            isLoading = true,
+                            errorMessage = ""
                         )
                     }
                     is Resource.Success -> {
@@ -64,14 +65,16 @@ class ArticlesViewModel @Inject constructor(
                         }
                         _state.value = state.value.copy(
                             articlesList = list,
-                            isLoading = false
+                            isLoading = false,
+                            errorMessage = ""
                         )
                         showSearch = true
                     }
                     is Resource.Error -> {
                         _state.value = state.value.copy(
                             articlesList = list,
-                            isLoading = false
+                            isLoading = false,
+                            errorMessage = "Failed Connected To API Server"
                         )
                         isMax = true
                         showSearch = true
@@ -96,7 +99,8 @@ class ArticlesViewModel @Inject constructor(
             page = 1
             _state.value = state.value.copy(
                 articlesList = ArrayList(),
-                isLoading = false
+                isLoading = false,
+                errorMessage = ""
             )
             remainingArticle = 0
             getArticles()

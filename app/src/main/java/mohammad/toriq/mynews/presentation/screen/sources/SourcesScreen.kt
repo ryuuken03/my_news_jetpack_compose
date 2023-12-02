@@ -75,7 +75,6 @@ fun SourcesScreen (
     sourcesViewModel: SourcesViewModel = hiltViewModel(),
 ){
 
-    var state = sourcesViewModel.state.value
     if(!sourcesViewModel.isInit){
         sourcesViewModel.isInit = true
         sourcesViewModel.getSources(category.lowercase())
@@ -231,7 +230,6 @@ fun initSources(
                                 border = BorderStroke(1.dp, colorResource(id = R.color.black)),
                                 shape = RoundedCornerShape(4),
                                 onClick = fun(){
-//                                    Toast.makeText(activity,sources[index].name!!,Toast.LENGTH_SHORT).show()
                                     navController.navigate(
                                         Screen.ArticlesScreen
                                             .sendData(sources[index].id!!, sources[index].name!!)
@@ -239,7 +237,6 @@ fun initSources(
                                 }
                             ){
                                 Row (
-//                                    horizontalAlignment  = Alignment.CenterHorizontally,
                                     modifier = Modifier
                                         .fillMaxWidth()
                                         .padding(5.dp),
