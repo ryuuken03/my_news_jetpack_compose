@@ -1,9 +1,9 @@
 ## Tentang Aplikasi
 
-My News adalah aplikasi android untuk baca berita online menggunakan public api source dari <a href = "https://newsapi.org/">News API</a>
+My News adalah aplikasi android untuk baca berita online. Sumber data aplikasi ini menggunakan public api source dari <a href = "https://newsapi.org/">News API</a>
 Aplikasi ini di bangun menggunakan :  
 - [x] Kotlin sebagai bahasa Pemrogaman Utama</a>
-- [x] Jetpack Compose  sebagai UI Layout</a>
+- [x] Jetpack Compose sebagai UI Layout</a>
 - [x] Clean Architecture & MVVM</a>
 - [x] Hilt untuk Dependency Injection </a>
 - [x] Retrofit2 untuk networking dan konsumsi REST API</a>
