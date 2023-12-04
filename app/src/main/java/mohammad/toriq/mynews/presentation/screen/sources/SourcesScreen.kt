@@ -4,6 +4,7 @@ package mohammad.toriq.mynews.presentation.screen.sources
 
 import android.annotation.SuppressLint
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -96,6 +97,9 @@ fun initSources(
     sourcesViewModel: SourcesViewModel,
     modifier: Modifier = Modifier) {
     val keyboardController = LocalSoftwareKeyboardController.current
+    BackHandler {
+        navController.navigateUp()
+    }
     Scaffold(
         modifier = Modifier
             .fillMaxSize(),

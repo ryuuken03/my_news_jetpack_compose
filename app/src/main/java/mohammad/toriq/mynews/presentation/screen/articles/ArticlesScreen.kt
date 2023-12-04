@@ -6,6 +6,7 @@ import android.annotation.SuppressLint
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -114,6 +115,9 @@ fun initArticles(
     articlesViewModel: ArticlesViewModel,
     modifier: Modifier = Modifier) {
     val keyboardController = LocalSoftwareKeyboardController.current
+    BackHandler {
+        navController.navigateUp()
+    }
     Scaffold(
         modifier = Modifier
             .fillMaxSize(),
